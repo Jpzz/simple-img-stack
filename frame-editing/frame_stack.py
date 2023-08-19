@@ -21,11 +21,11 @@ def stack_img(argv, args):
     file_path = os.path.join('./frames', args.input)
     output_path = os.path.join('./stack-output', args.output)
 
-    if os.path.exists(output_path):
+    if os.path.exists('./stack-output'):
         print('exist output path')
     else:
-        print('make directory {}'.format(output_path))
-        os.mkdir(output_path)
+        print('make directory {}'.format('./stack-output'))
+        os.mkdir('./stack-output')
 
     resized_width = args.width
     resized_height = args.height
