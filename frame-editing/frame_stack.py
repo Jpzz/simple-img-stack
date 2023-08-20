@@ -6,7 +6,7 @@ import natsort
 import numpy as np
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--input', help='frames input directory', type=str, default='01')
+parser.add_argument('--input', help='frames input directory', type=str, default='./frames/01')
 parser.add_argument('--output', help='stacked frames output file name', type=str, default='01.png')
 parser.add_argument('--width', help='set width resized img', type=int, default=512)
 parser.add_argument('--height', help='set height resized img', type=int, default=512)
@@ -18,7 +18,7 @@ args = parser.parse_args()
 def stack_img(argv, args):
     row = args.row
     col = args.col
-    file_path = os.path.join('./frames', args.input)
+    file_path = args.input
     output_path = os.path.join('./stack-output', args.output)
 
     if os.path.exists('./stack-output'):
